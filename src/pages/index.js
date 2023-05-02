@@ -1,21 +1,20 @@
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
-
-  const [val, setVal] = useState(50)
+  const [val, setVal] = useState(50);
 
   useEffect(() => {
-    const sensor = document.getElementById('sensor1');
+    const sensor = document.getElementById("sensor1");
     let eventSrc;
     let state;
 
     let connect = () => {
       console.log(`connecting...`);
-      eventSrc = new EventSource('/api/data');
+      eventSrc = new EventSource("/api/data");
 
       eventSrc.onmessage = (event) => {
         const value = parseInt(event.data, 10);
@@ -31,7 +30,7 @@ export default function Index() {
         eventSrc.close();
         connect();
       };
-    }
+    };
 
     setInterval(() => {
       if (eventSrc.readyState === state) return;
@@ -64,13 +63,21 @@ export default function Index() {
         <div className="text-center">
           <div className="mt-40">
             <label htmlFor="sensor">Live Sensor Data</label>
-            <br/>
-            <br/>
-            <br/>
-            <input type="range" min="0" max="100" step="1" value={val} readOnly id="sensor1"/>
+            <br />
+            <br />
+            <br />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value={val}
+              readOnly
+              id="sensor1"
+            />
           </div>
         </div>
-        <br/>
+        <br />
 
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black">
           <p className="place-items-center gap-2 p-8 lg:pointer-events-auto">
@@ -78,7 +85,6 @@ export default function Index() {
           </p>
         </div>
       </div>
-
     </main>
-  )
+  );
 }

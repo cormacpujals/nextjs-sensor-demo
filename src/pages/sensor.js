@@ -1,6 +1,6 @@
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   let timestamp = Date.now();
@@ -9,16 +9,16 @@ export default function Home() {
     if (Date.now() - timestamp < 50) return;
     timestamp = Date.now();
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Connection': 'close',
+        "Content-Type": "application/json",
+        Connection: "close",
       },
-      body: JSON.stringify({ value: value })
+      body: JSON.stringify({ value: value }),
     };
     try {
       console.log(`post value: ${value}`);
-      const res = await fetch('/api/data', requestOptions);
+      const res = await fetch("/api/data", requestOptions);
       if (!res.ok) {
         console.error(res.statusText);
       }
@@ -38,14 +38,23 @@ export default function Home() {
 
         <div className="text-center">
           <div className="mt-40">
-            <label htmlFor="sensor">Adjust remote sensor to simulate live data:</label>
-            <br/>
-            <br/>
-            <br/>
-            <input type="range" min="0" max="100" step="1" id="sensor" onInput={e => postData(e.target.value)}/>
+            <label htmlFor="sensor">
+              Adjust remote sensor to simulate live data:
+            </label>
+            <br />
+            <br />
+            <br />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              id="sensor"
+              onInput={(e) => postData(e.target.value)}
+            />
           </div>
         </div>
-        <br/>
+        <br />
 
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black">
           <p className="place-items-center gap-2 p-8 lg:pointer-events-auto">
@@ -53,7 +62,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-
     </main>
-  )
+  );
 }
