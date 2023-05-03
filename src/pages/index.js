@@ -23,7 +23,7 @@ export default function Index() {
         if (value > -1) {
           console.log(`value: ${parseInt(event.data, 10)}`);
           // setVal(value);
-          sensor.value = event.data;
+          // sensor.value = event.data;
           sensorNum.innerHTML = event.data;
         }
       };
@@ -69,18 +69,17 @@ export default function Index() {
             <br />
             <br />
             <br />
-            <span id="sensorNum" className="text-lg">{val}</span>&nbsp;<span>bpm</span>
+            <span id="sensorNum" className="text-2xl">{val}</span>&nbsp;<span>bpm</span>
             <br/>
-            <br/>
-            <input
-              type="range"
-              min="20"
-              max="200"
-              step="1"
-              value={val}
-              readOnly="true"
-              id="sensor1"
-            />
+            {/*<input*/}
+            {/*  type="range"*/}
+            {/*  min="20"*/}
+            {/*  max="200"*/}
+            {/*  step="1"*/}
+            {/*  value={val}*/}
+            {/*  readOnly*/}
+            {/*  id="sensor1"*/}
+            {/*/>*/}
           </div>
           <br/>
           <br/>

@@ -4,10 +4,10 @@
 # Images:
 
 Adjust the slider to simulate real-time sensor data! This data is sent from the client to the server.
-<img src="https://i.imgur.com/nD9TYcy.png">
+<img src="https://i.imgur.com/nxtBfjS.png">
 
 From the server, the data that is constantly being collected is displayed in real time!
-<img src="https://i.imgur.com/ZPJyAvT.png">
+<img src="https://i.imgur.com/t2765rM.png">
 
 
 # Technologies Used
