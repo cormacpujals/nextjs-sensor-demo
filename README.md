@@ -7,7 +7,7 @@ Adjust the slider to simulate real-time sensor data! This data is sent from the 
 <img src="https://i.imgur.com/nxtBfjS.png">
 
 From the server, the data that is constantly being collected is displayed in real time!
-<img src="https://i.imgur.com/t2765rM.png">
+<img src="https://i.imgur.com/334sVik.png">
 
 
 # Technologies Used

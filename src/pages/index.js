@@ -64,7 +64,13 @@ export default function Index() {
         </p>
 
         <div className="text-center">
+          <br/>
+          <div>
+            <Link className="text-blue-500 underline" target="_blank" href={"https://nextjs-sensor-demo-3lam4rtc4a-uc.a.run.app/sensor"}>Click me first and open each tab side-by-side</Link>
+          </div>
+
           <div className="mt-40">
+            <br/>
             <label htmlFor="sensor">Real-Time Sensor Data</label>
             <br />
             <br />
@@ -84,9 +90,6 @@ export default function Index() {
           <br/>
           <br/>
           <br/>
-          <div>
-            <Link className="text-blue-500 underline" target="_blank" href={"https://nextjs-sensor-demo-3lam4rtc4a-uc.a.run.app/sensor"}>Click me first and open each tab side-by-side</Link>
-          </div>
         </div>
         <br />
 
