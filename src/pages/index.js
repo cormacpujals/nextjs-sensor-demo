@@ -1,14 +1,16 @@
 import { Inter } from "next/font/google";
+import Link from 'next/link';
 
 import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
-  const [val, setVal] = useState(50);
+  const [val, setVal] = useState(110);
 
   useEffect(() => {
     const sensor = document.getElementById("sensor1");
+    const sensorNum = document.getElementById("sensorNum");
     let eventSrc;
     let state;
 
@@ -22,6 +24,7 @@ export default function Index() {
           console.log(`value: ${parseInt(event.data, 10)}`);
           // setVal(value);
           sensor.value = event.data;
+          sensorNum.innerHTML = event.data;
         }
       };
 
@@ -62,22 +65,33 @@ export default function Index() {
 
         <div className="text-center">
           <div className="mt-40">
-            <label htmlFor="sensor">Live Sensor Data</label>
+            <label htmlFor="sensor">Real-Time Sensor Data</label>
             <br />
             <br />
             <br />
+            <span id="sensorNum" className="text-lg">{val}</span>&nbsp;<span>bpm</span>
+            <br/>
+            <br/>
             <input
               type="range"
-              min="0"
-              max="100"
+              min="20"
+              max="200"
               step="1"
               value={val}
-              readOnly
+              readOnly="true"
               id="sensor1"
             />
           </div>
+          <br/>
+          <br/>
+          <br/>
+          <div>
+            <Link className="text-blue-500 underline" target="_blank" href={"https://nextjs-sensor-demo-3lam4rtc4a-uc.a.run.app/sensor"}>Click me first and open each tab side-by-side</Link>
+          </div>
         </div>
         <br />
+
+
 
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black">
           <p className="place-items-center gap-2 p-8 lg:pointer-events-auto">

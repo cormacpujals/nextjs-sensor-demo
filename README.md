@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js — Real time data collection and visualization with Server-Sent-Events 
 
-## Getting Started
 
-First, run the development server:
+# Images:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Adjust the slider to simulate real-time sensor data! This data is sent from the client to the server.
+<img src="https://i.imgur.com/nD9TYcy.png">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+From the server, the data that is constantly being collected is displayed in real time!
+<img src="https://i.imgur.com/ZPJyAvT.png">
 
-You can start editing the page by modifying `pages/sensor.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Technologies Used
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-## Learn More
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-To learn more about Next.js, take a look at the following resources:
+![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Google Cloud Platform](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/1024px-Google_Cloud_logo.svg.png?20210208232155)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+# Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Open the real-time feed —> [Real-time Sensor Simulation](https://nextjs-sensor-demo-3lam4rtc4a-uc.a.run.app/)
+2. Click the sensor page link (which will open in a new tab automatically).
+3. Have the pages side-by-side on your desktop. 
+4. Adjust the slider on the sensor page to simulate data sensor data (it will be sent to the server)
+5. Watch as the data being uploaded to the server gets rendered on the client in real time! 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

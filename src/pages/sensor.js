@@ -39,15 +39,15 @@ export default function Home() {
         <div className="text-center">
           <div className="mt-40">
             <label htmlFor="sensor">
-              Adjust remote sensor to simulate live data:
+              Adjust the slider to simulate a sensor collecting data. Sensor data is sent to the server every 20th of a second.
             </label>
             <br />
             <br />
             <br />
             <input
               type="range"
-              min="0"
-              max="100"
+              min="20"
+              max="200"
               step="1"
               id="sensor"
               onInput={(e) => postData(e.target.value)}
