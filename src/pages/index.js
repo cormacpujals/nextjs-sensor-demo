@@ -1,14 +1,21 @@
 import { Inter } from "next/font/google";
-import Link from 'next/link';
+import Link from "next/link";
+import Script from "next/script";
 
 import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+let initialized = false;
+
 export default function Index() {
   const [val, setVal] = useState(110);
 
   useEffect(() => {
+    // Only run this once (react unmounts and remounts in dev mode)!
+    if (initialized) return;
+    initialized = true;
+
     const sensor = document.getElementById("sensor1");
     const sensorNum = document.getElementById("sensorNum");
     let eventSrc;
@@ -27,29 +34,7 @@ export default function Index() {
           sensorNum.innerHTML = event.data;
         }
       };
-
-      eventSrc.onerror = (error) => {
-        console.error(`error: ${error}`);
-        eventSrc.close();
-        connect();
-      };
     };
-
-    setInterval(() => {
-      if (eventSrc.readyState === state) return;
-
-      state = eventSrc.readyState;
-      console.log(`readyState: ${state}`);
-
-      if (state === 0) {
-        console.log(`readyState: connecting`);
-      } else if (state === 1) {
-        console.log(`readyState: open`);
-      } else {
-        console.log(`readyState: ${eventSrc.readyState}`);
-        connect();
-      }
-    }, 1000);
 
     connect();
   });
@@ -64,19 +49,29 @@ export default function Index() {
         </p>
 
         <div className="text-center">
-          <br/>
+          <br />
           <div>
-            <Link className="text-blue-500 underline" target="_blank" href={"https://nextjs-sensor-demo-3lam4rtc4a-uc.a.run.app/sensor"}>Click me first and open each tab side-by-side</Link>
+            <Link
+              className="text-blue-500 underline"
+              target="_blank"
+              href={"/sensor"}
+            >
+              Click me first and open each tab side-by-side
+            </Link>
           </div>
 
           <div className="mt-40">
-            <br/>
+            <br />
             <label htmlFor="sensor">Real-Time Sensor Data</label>
             <br />
             <br />
             <br />
-            <span id="sensorNum" className="text-2xl">{val}</span>&nbsp;<span>bpm</span>
-            <br/>
+            <span id="sensorNum" className="text-2xl">
+              {val}
+            </span>
+            &nbsp;
+            <span>bpm</span>
+            <br />
             {/*<input*/}
             {/*  type="range"*/}
             {/*  min="20"*/}
@@ -87,13 +82,11 @@ export default function Index() {
             {/*  id="sensor1"*/}
             {/*/>*/}
           </div>
-          <br/>
-          <br/>
-          <br/>
+          <br />
+          <br />
+          <br />
         </div>
         <br />
-
-
 
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black">
           <p className="place-items-center gap-2 p-8 lg:pointer-events-auto">

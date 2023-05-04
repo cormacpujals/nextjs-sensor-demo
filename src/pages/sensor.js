@@ -39,7 +39,8 @@ export default function Home() {
         <div className="text-center">
           <div className="mt-40">
             <label htmlFor="sensor">
-              Adjust the slider to simulate a sensor collecting data. Sensor data is sent to the server every 20th of a second.
+              Adjust the slider to simulate a sensor collecting data. Sensor
+              data is sent to the server every 20th of a second.
             </label>
             <br />
             <br />
